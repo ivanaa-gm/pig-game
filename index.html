@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIG GAME!</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="modalLogic.js" defer></script>
+    <script src="gameLogic.js" defer></script>
+</head>
+</head>
+<body>
+    <img src="/assets/question-mark.svg" class="how-to-play">
+    <div class="how-to-play-modal">
+        <button class="close-modal">&times;</button>
+        <h1>HOW TO PLAY</h1>
+        <p>
+            In this two-player dice game, each player competes to reach a total score of 100. The order of play is determined when someone clicks the "New Game" button. During a player's turn, they can roll the dice as many times as they wish, with each roll adding the dice value (from 1 to 6) to their current score. Players must decide whether to continue rolling or to "Hold" by clicking the hold button, which transfers their current score to their total score. However, if a player rolls a 1, they lose their accumulated current score and their turn ends immediately. The first player to achieve a total score of 100 wins the game.
+        </p>
+    </div>
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="player one" id="player-one">
+            <div class="player-info-container">
+                <h1>PLAYER 1</h1>
+                <div class="score" id="player-one-score">0</div>
+            </div>
+            <div class="current-score-container">
+                <h2>CURRENT</h2>
+                <div class="current-score" id="player-one-current-score">0</div>
+            </div>
+        </div>
+        <div class="game-btn new-game-btn">
+            <img src="/assets/new.svg" class="icon">
+            NEW GAME</div>
+        <div class="dice"></div>
+        <div class="game-btn roll-btn">
+            <img src="/assets/roll.svg" class="icon">
+            ROLL DICE</div>
+        <div class="game-btn hold-btn">
+            <img src="/assets/hold.svg" class="icon">
+            HOLD</div>
+        <div class="player two" id="player-two">
+            <div class="player-info-container">
+                <h1>PLAYER 2</h1>
+                <div class="score" id="player-two-score">0</div>
+            </div>
+            <div class="current-score-container">
+                <h2>CURRENT</h2>
+                <div class="current-score" id="player-two-current-score">0</div>
+            </div>
+        </div>
+    </div>
+    <canvas id="confetti-canvas"></canvas>
+</body>
+</html>

@@ -1,0 +1,222 @@
+@font-face {
+    font-family: "main-font";
+    src: url("fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+body {
+    background-image: url('assets/pigwallpaper.png'); 
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: main-font;
+    position: relative;
+}
+
+.how-to-play {
+    width:60px;
+    height: 60px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.how-to-play:hover {
+    opacity: .9;
+}
+
+.how-to-play-modal {
+    height: 500px;
+    width: 800px;
+    position: absolute;
+    background-color: #292F33;
+    color: rgba(244, 171, 186, 0.8);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 3rem;
+    color: rgba(244, 171, 186, 0.8);
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.how-to-play-modal, h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+  
+.how-to-play-modal, p {
+    font-size: 1.5rem;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 999;
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+  
+.closing {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.content {
+    background-color: rgba(240, 248, 255, 0.7);
+    color: #292F33;
+    text-align: center;
+    height: 650px;
+    width: 900px;
+    border-radius: 4%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative; 
+    overflow: hidden;
+    z-index: 1;
+}
+
+.player {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: none;
+    animation: none;
+}
+
+.dice {
+    position: absolute;
+    background-image: url('assets/play.png');
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+    top: 100px;
+    animation: glow 1.5s ease-in-out infinite alternate;
+    cursor: pointer;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 100px rgba(244, 171, 186);
+    }
+    100% {
+        box-shadow: 0 0 100px rgba(244, 171, 186);
+    }
+}
+
+
+.game-btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    background-color: rgba(244, 171, 186, 0.7);
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    gap: 4px;
+    color: #292F33;
+    font-weight: 500;
+}
+
+.game-btn:hover {
+    background-color: rgba(234, 89, 110, 0.5);
+}
+
+.new-game-btn {
+    top: 20px;
+}
+
+.roll-btn {
+    top: 350px;
+    animation: none;
+}
+
+@keyframes blink {
+    0% {
+        background: rgba(197, 190, 191, 0.7);
+    }
+    100% {
+        background: rgba(240, 248, 255, 0.7);
+    }
+}
+
+.hold-btn {
+    top: 450px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.player-info-container {
+    font-size: 20px;
+}
+
+.score {
+    font-size:  100px;
+    font-weight: 500;
+}
+
+.current-score-container {
+    background-color: #EA596E;
+    border-radius: 5px;
+    width: 250px;
+    height: 150px;
+}
+
+.current-score {
+    font-size:  50px;
+    font-weight: 400;
+}
+
+#confetti-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1001; 
+}
